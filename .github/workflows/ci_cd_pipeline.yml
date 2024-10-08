@@ -8,6 +8,8 @@ on:
 jobs:
   echo-secret:
     runs-on: ubuntu-latest
+    
+    environment: prog8850-assignment2
 
     steps:
       - name: Checkout repository
