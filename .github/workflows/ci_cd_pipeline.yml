@@ -34,4 +34,4 @@ jobs:
         DB_NAME: ${{ secrets.DB_NAME }}
         MY_VAR: 'sample_var'
       run: |
-        echo "My secret is ${{ env.MY_VAR }} ${{ env.DB_HOST }} ${{ env.DB_USER }} ${{ env.DB_PASSWORD }} ${{ env.DB_NAME }}"
+        python automate_schema_changes.py ${{ env.DB_HOST }} ${{ env.DB_USER }} ${{ env.DB_PASSWORD }} ${{ env.DB_NAME }}
