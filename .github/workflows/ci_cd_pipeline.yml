@@ -8,6 +8,9 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
 
     steps:
     - name: Checkout repository
@@ -31,4 +34,4 @@ jobs:
         DB_NAME: ${{ secrets.DB_NAME }}
         MY_VAR: 'sample_var'
       run: |
-        echo "My secret is ${{ env.DB_HOST }} ${{ env.DB_USER }} ${{ env.DB_PASSWORD }} ${{ env.DB_NAME }}"
+        echo "My secret is ${{ env.MY_VAR }} ${{ env.MY_VAR }} ${{ env.DB_HOST }} ${{ env.DB_USER }} ${{ env.DB_PASSWORD }} ${{ env.DB_NAME }}"
