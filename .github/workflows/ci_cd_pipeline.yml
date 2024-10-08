@@ -29,5 +29,6 @@ jobs:
         DB_USER: ${{ secrets.DB_USER }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         DB_NAME: ${{ secrets.DB_NAME }}
+        MY_VAR: 'sample_var'
       run: |
-        echo "My secret is ${{ secrets.DB_NAME }}"
+        echo "My secret is ${{ secrets.MY_VAR }}"
