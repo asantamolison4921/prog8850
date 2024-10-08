@@ -1,0 +1,17 @@
+name: Assignment 2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  echo-secret:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Echo DB_USERNAME
+        run: echo ${{ secrets.DB_USERNAME }}
