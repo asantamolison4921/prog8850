@@ -8,14 +8,15 @@
 import os
 import pymysql
 import logging
+import sys
 
 
 # Create the database connection directly
 connection = pymysql.connect(
-    host=os.getenv('DB_HOST'),
-    user=os.getenv('DB_USER'),
-    password=os.getenv('DB_PASSWORD'),
-    database=os.getenv('DB_NAME'),
+    host=sys.argv[1],
+    user=sys.argv[2],
+    password=sys.argv[3],
+    database=sys.argv[4],
     ssl={"fake_flag_to_enable_tls":True}
 )
 
