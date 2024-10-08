@@ -32,6 +32,5 @@ jobs:
         DB_USER: ${{ secrets.DB_USER }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         DB_NAME: ${{ secrets.DB_NAME }}
-        MY_VAR: 'sample_var'
       run: |
         python automate_schema_changes.py ${{ env.DB_HOST }} ${{ env.DB_USER }} ${{ env.DB_PASSWORD }} ${{ env.DB_NAME }}
