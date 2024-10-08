@@ -5,7 +5,10 @@
 # ================================================================ #
 
 # importing pymysql library for enabling connection with mysql
+import os
 import pymysql
+import logging
+
 
 # Create the database connection directly
 connection = pymysql.connect(
