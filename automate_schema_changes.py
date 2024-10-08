@@ -9,10 +9,10 @@ import pymysql
 
 # Create the database connection directly
 connection = pymysql.connect(
-    host='prog8850-mysql-1.mysql.database.azure.com',  
-    user='rootdb',  
-    password='Secret55',  
-    database='assignment2',
+    host=os.getenv('DB_HOST'),
+    user=os.getenv('DB_USER'),
+    password=os.getenv('DB_PASSWORD'),
+    database=os.getenv('DB_NAME'),
     ssl={"fake_flag_to_enable_tls":True}
 )
 
