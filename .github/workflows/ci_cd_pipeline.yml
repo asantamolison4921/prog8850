@@ -6,14 +6,28 @@ on:
       - main
 
 jobs:
-  echo-secret:
+  run-script:
     runs-on: ubuntu-latest
-    
-    environment: prog8850-assignment2
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Echo DB_USERNAME
-        run: echo ${{ secrets.DB_USERNAME }}
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pymysql  # Install pymysql
+
+    - name: Run Python script
+      env:
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_NAME: ${{ secrets.DB_NAME }}
+      run: |
+        python myscript.py
