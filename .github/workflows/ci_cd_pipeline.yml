@@ -33,4 +33,4 @@ jobs:
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         DB_NAME: ${{ secrets.DB_NAME }}
       run: |
-        python automate_schema_changes.py ${{ env.DB_HOST }} ${{ env.DB_USER }} ${{ env.DB_PASSWORD }} ${{ env.DB_NAME }}
+        python github_actions.py ${{ env.DB_HOST }} ${{ env.DB_USER }} ${{ env.DB_PASSWORD }} ${{ env.DB_NAME }}
